@@ -8,14 +8,12 @@ namespace Hotelaria.Models
     public class Pessoa
     {
         public string Nome;
-        public int Idade;
-        public int CPF;
+        public string CPF;
         public string Nascimento;
         
-        public Pessoa(string nome, int idade, int cpf, string nascimento)
+        public Pessoa(string nome, string cpf, string nascimento)
         {
             Nome = nome;
-            Idade = idade;
             CPF = cpf;
             Nascimento = nascimento;
         }
