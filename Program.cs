@@ -53,7 +53,7 @@ class Program
         }
     }
 
-    static void cadastrarHospedes()
+    static Pessoa cadastrarHospedes()
     {   
         Console.WriteLine("Digite o nome:");
         string nome = Console.ReadLine();
@@ -64,6 +64,8 @@ class Program
 
         Pessoa pessoa = new Pessoa(nome, cpf, nascimento);
         pList.Add(pessoa);
+
+        return pessoa;
     }     
     
     static void escolherSuite()
@@ -106,5 +108,14 @@ class Program
         Console.WriteLine("Qual hospede vai sair?");
         string saindo = Console.ReadLine();
 
+         for(int contador = 0; contador < pList.Count(); ++contador)
+        {
+            if(pList.ElementAt(contador).Nome == saindo)
+            {
+                pList.RemoveAt(contador);
+                Console.WriteLine($"Você removeu o " + saindo);
+                Console.WriteLine("-=-=-=-=-=-=-=-==-=-=-=-=");
+            }
+        }
     }
 } 
